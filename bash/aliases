@@ -1,0 +1,66 @@
+# Utility
+alias reload='source ~/bin/dotfiles/bash/aliases'
+alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="mate ~/bin/dotfiles/bash/env"
+
+# Quicker cd
+
+# change to current gem directory
+alias cg='cd `gem environment gemdir`'
+
+# textmate
+  alias m='mate'
+  
+# Rails
+  alias ss='./script/server'
+  alias sc='./script/console'
+  alias dbm='rake db:migrate'
+  alias dbtp='rake db:test:prepare'
+  alias sg='./script/generate'
+  alias cuk='./script/cucumber'
+  alias cukc='./script/cucumber -pindev'
+  alias mig='./script/generate migration'
+  alias scaf='./script/generate scaffold'
+  alias mod='./script/generate model'
+  alias cont='./script/generate controller'
+  alias clog='rake log:clear'
+
+# Ruby
+  alias r='rake'
+
+# gem
+  alias sgi='sudo gem install'
+
+# git
+  alias g='git'
+  alias gb='git branch'
+  alias gba='git branch -a'
+  alias gc='git commit -v'
+  alias gca='git commit -v -a'
+  # Commit pending changes and quote all args as message
+  function gg() { 
+      git commit -v -a -m "$*"
+  }
+  alias gco='git checkout'
+  alias gd='git diff'
+  alias gdm='git diff | mate'
+  alias gl='git pull'
+  alias gp='git push'
+  alias gs='git status'
+  alias gst='git status'
+  # Quickly clobber a file and checkout
+  function grf() { 
+    rm $1
+    git checkout $1 
+  }
+# svn
+  alias sst='svn status -u'
+  alias slog='svn log | less'
+  alias sci='svn ci'
+  alias scim='svn ci -m'
+  alias sad='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
+  alias sup='svn up'
+  alias srm='svn rm'
+# general
+  alias ps?='ps ax | grep '
+  alias h?='history | grep '

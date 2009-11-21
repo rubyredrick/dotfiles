@@ -1,0 +1,42 @@
+append () {
+  # First remove the directory
+  local IFS=':'
+  local NEWPATH
+  for DIR in $PATH; do
+     if [ "$DIR" != "$1" ]; then
+       NEWPATH=${NEWPATH:+$NEWPATH:}$DIR
+     fi
+  done
+
+  # Then append the directory
+  export PATH=$NEWPATH:$1
+}
+
+prepend () {
+  # First remove the directory
+  local IFS=':'
+  local NEWPATH
+  for DIR in $PATH; do
+     if [ "$DIR" != "$1" ]; then
+       NEWPATH=${NEWPATH:+$NEWPATH:}$DIR
+     fi
+  done
+
+  # Then append the directory
+  export $PATH=$1:$NEWPATH
+}
+
+if [ -d "$HOME/bin" ] ; then
+  append $HOME/bin
+fi
+
+export PATH="/usr/local/homebrew/bin;/opt/local/bin:/opt/local/sbin:"$PATH
+
+export MANPATH="${MANPATH}:/opt/local/share/man" 
+export VISUALWORKS="/Users/rick/vw7.6nc"
+export MAGLEV_HOME=/Users/rick/MagLev/current
+export PATH=$MAGLEV_HOME/bin:$PATH
+export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="~/.rvm/bin:$PATH"
+export EDITOR='mate -w'
+export GIT_EDITOR='mate -w'
