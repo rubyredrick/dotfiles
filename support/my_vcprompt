@@ -4,6 +4,7 @@
 RESET=ARGV[0]
 RED= ARGV[1]
 YELLOW=ARGV[2]
+GREEN=ARGV[3]
 
 module Git
   def self.active?
@@ -27,7 +28,11 @@ module Git
 
   def self.prompt
     status = `git status`
-    state = "#{RED}" unless status =~ /working directory clean/
+    if status =~ /working directory clean/
+      state = GREEN
+    else
+      state = RED
+    end
     if status =~ /Your branch is (.*) of '(.*)\/.*' by (.*) commit/
       remote = "#{YELLOW}#{$1 == "ahead" ? "↑" : "↓"}(#{$3})#{$2}"
     end

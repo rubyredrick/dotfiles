@@ -27,7 +27,7 @@ function set_window_and_tab_title
 
 function prompt_func() {
  previous_return_value=$?;
- prompt="${TITLEBAR}${LIGHT_GRAY}\W${YELLOW}$(~/bin/dotfiles/support/my_vcprompt ${NO_COLOR} ${RED} ${YELLOW}${NO_COLOR})"
+ prompt="${TITLEBAR}${LIGHT_GRAY}\W${YELLOW}$(~/bin/dotfiles/support/my_vcprompt ${NO_COLOR} ${RED} ${YELLOW} ${GREEN})"
  if test $previous_return_value -eq 0
  then
    PS1="${GREEN}➜ ${NO_COLOR}${prompt}${GREEN} \$${NO_COLOR} "

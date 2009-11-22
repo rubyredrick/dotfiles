@@ -2,7 +2,7 @@ autoload -U colors
 colors
 setopt prompt_subst
 PROMPT='
-%~ %{$fg_bold[black]%}$(~/bin/dotfiles/support/my_vcprompt $reset_color $fg_bold[red] $fg_bold[yellow])
+%~ %{$fg_bold[black]%}$(~/bin/dotfiles/support/my_vcprompt $reset_color $fg_bold[red] $fg_bold[yellow] $fg_bold[green])
 → %{$reset_color%}'
 
 # Set RPROMPT to have info show up on the right, too.
