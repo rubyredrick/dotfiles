@@ -7,7 +7,22 @@ YELLOW=ARGV[2]
 
 module Git
   def self.active?
-    File.directory?(".git")
+    if File.directory?(".git")
+      true
+    else
+      self.search_for_git(Dir.getwd)
+    end
+  end
+
+  def self.search_for_git(dir_path)
+    dir_path = File.split(dir_path).first
+    if File.directory?(File.join(dir_path, ".git"))
+      true
+    elsif dir_path == "/"
+      false
+    else
+      search_for_git(dir_path)
+    end   
   end
 
   def self.prompt
