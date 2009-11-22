@@ -13,8 +13,8 @@ module Git
   def self.prompt
     status = `git status`
     state = "#{RED}" unless status =~ /working directory clean/
-    if status =~ /Your branch is (.*) of '(.*)\/.* by (.*) commit/
-      remote = "#{YELLOW}#{$1 == "ahead" ? "↑" : "↓"}#{$2}($3)"
+    if status =~ /Your branch is (.*) of '(.*)\/.*' by (.*) commit/
+      remote = "#{YELLOW}#{$1 == "ahead" ? "↑" : "↓"}(#{$3})#{$2}"
     end
     if status =~ /Your branch and (.*)\/.* have diverged/
       remote = "#{YELLOW}#{$1}↕"
