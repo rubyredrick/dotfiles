@@ -1,4 +1,3 @@
-. ~/bin/dotfiles/bash/colors
 function set_window_and_tab_title
 {
     local title="$1"
@@ -59,19 +58,4 @@ function my_vcprompt {
 	  else
 	  echo " $(vcprompt)"
   fi
-} 
-function prompt_func() {
- previous_return_value=$?;
- prompt="${TITLEBAR}${LIGHT_GRAY}\W${YELLOW}$(my_vcprompt)${NO_COLOR}"
- if test $previous_return_value -eq 0
- then
-   PS1="${GREEN}➜ ${NO_COLOR}${prompt}${GREEN} \$${NO_COLOR} "
- else
-   PS1="${RED}➜ ${NO_COLOR}${prompt}${RED} \$${NO_COLOR} "
- fi
- set_window_and_tab_title "${PWD##*/}"
 }
- 
-PROMPT_COMMAND=prompt_func
-
-unset append

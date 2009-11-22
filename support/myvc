@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+RESET=ARGV[0]
+RED= ARGV[1]
+YELLOW=ARGV[2]
+
+module Git
+  def self.active?
+    File.directory?(".git")
+  end
+
+  def self.prompt
+    status = `git status`
+    state = "#{RED}" unless status =~ /working directory clean/
+    if status =~ /Your branch is (.*) of '(.*)\/.* by (.*) commit/
+      remote = "#{YELLOW}#{$1 == "ahead" ? "↑" : "↓"}#{$2}($3)"
+    end
+    if status =~ /Your branch and (.*)\/.* have diverged/
+      remote = "#{YELLOW}#{$1}↕"
+    end
+    if status =~ /^# On branch (.*?)$/
+      "[git:#{state}#{$1}#{remote}#{RESET}]"
+    else
+      ""
+    end
+  end
+end
+
+prompt = if Git.active?
+  Git.prompt
+else
+  `vcprompt`
+end
+
+puts prompt

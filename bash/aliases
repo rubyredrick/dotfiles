@@ -61,6 +61,3 @@ alias cg='cd `gem environment gemdir`'
   alias sad='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
   alias sup='svn up'
   alias srm='svn rm'
-# general
-  alias ps?='ps ax | grep '
-  alias h?='history | grep '
