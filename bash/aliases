@@ -2,11 +2,17 @@
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="mate ~/bin/dotfiles/bash/env"
+alias epa='mate -w ~/.personal_shell_aliases && reload' # Edit personal aliases
+
+if [ -f ~/.personal_shell_aliases ] ; then 
+  . ~/.personal_shell_aliases
+fi
 
 # Quicker cd
 
 # change to current gem directory
 alias cg='cd `gem environment gemdir`'
+
 
 # textmate
   alias m='mate'
@@ -61,3 +67,4 @@ alias cg='cd `gem environment gemdir`'
   alias sad='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
   alias sup='svn up'
   alias srm='svn rm'
+  
