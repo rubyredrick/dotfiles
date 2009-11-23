@@ -30,6 +30,8 @@ if [ -d "$HOME/bin" ] ; then
   append $HOME/bin
 fi
 
+
+
 export PATH="/usr/local/homebrew/bin;/opt/local/bin:/opt/local/sbin:"$PATH
 
 export MANPATH="${MANPATH}:/opt/local/share/man" 
@@ -37,6 +39,9 @@ export VISUALWORKS="/Users/rick/vw7.6nc"
 export MAGLEV_HOME=/Users/rick/MagLev/current
 export PATH=$MAGLEV_HOME/bin:$PATH
 export PATH="/usr/local/mysql/bin:$PATH"
-export PATH="~/.rvm/bin:$PATH"
+if [ -f ~/.rvm/bin/rvm ] ; then 
+  . ~/.rvm/bin/rvm
+  export PATH="~/.rvm/bin:$PATH"
+fi
 export EDITOR='mate -w'
 export GIT_EDITOR='mate -w'
