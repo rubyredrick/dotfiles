@@ -36,7 +36,7 @@ export PATH="/usr/local/homebrew/bin;/opt/local/bin:/opt/local/sbin:"$PATH
 
 export MANPATH="${MANPATH}:/opt/local/share/man" 
 export VISUALWORKS="/Users/rick/vw7.6nc"
-export MAGLEV_HOME=/Users/rick/MagLev/current
+export MAGLEV_HOME=/Users/rick/maglev
 export PATH=$MAGLEV_HOME/bin:$PATH
 export PATH="/usr/local/mysql/bin:$PATH"
 if [ -f ~/.rvm/bin/rvm ] ; then 
