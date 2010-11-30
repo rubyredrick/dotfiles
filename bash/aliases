@@ -26,17 +26,90 @@ alias cg='cd `gem environment gemdir`'
 
 # textmate
   alias m='mate'
+
+# rails  
+# rails 3 shortcut 'r'
+  alias r='rails'
+
+  # launching console/server
+  sc () {
+    if [ -f ./script/rails ]; then 
+      rails c $@
+    else
+      ./script/console $@
+    fi
+  }
+
+  sg () {
+    if [ -f ./script/rails ]; then
+      rails g $@
+    else
+      ./script/generate $@
+    fi
+  }
+  
+  mig () {
+  if [ -f ./script/rails ]; then
+    rails g migration $@
+  else
+    ./script/generate migration $@
+  fi
+  }
+
+  scaf () {
+  if [ -f ./script/rails ]; then
+    rails g scaffold $@
+  else
+    ./script/generate scaffold $@
+  fi
+  }
+  
+  mod () {
+  if [ -f ./script/rails ]; then
+    rails g model $@
+  else
+    ./script/generate model $@
+  fi
+  }
+  
+  cont () {
+  if [ -f ./script/rails ]; then
+    rails g controller $@
+  else
+    ./script/generate controller $@
+  fi
+  }
+  
+  ss () {
+    if [ -f ./script/rails ]; then 
+      rails s $@
+    else
+      ./script/server $@
+    fi
+  }
+
+  sspe () {
+    if [ -f ./script/rails ]; then 
+      sudo rails s -p80 $@
+    else
+      sudo ./script/server -p80 $@
+    fi
+  }
+
+  # database migrate
+  alias dbm='rake db:migrate'
+
+  # tests
+  alias rspec='rake spec'
+
+  # rails logs, tailing and cleaning
+  alias tdl='tail -f ./log/development.log'
+  alias ttl='tail -f ./log/test.log'
+  alias ctl='> ./log/test.log'
+  alias cdl='> ./log/development.log'
   
 # Rails
-  alias ss='./script/server'
-  alias sc='./script/console'
-  alias dbm='rake db:migrate'
   alias dbtp='rake db:test:prepare'
-  alias sg='./script/generate'
-  alias cuk='./script/cucumber'
-  alias mig='./script/generate migration'
-  alias scaf='./script/generate scaffold'
-  alias mod='./script/generate model'
   alias cont='./script/generate controller'
   alias clog='rake log:clear'
   alias mlmig='mateLastMigration'
