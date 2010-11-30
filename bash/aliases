@@ -65,7 +65,10 @@ alias cg='cd `gem environment gemdir`'
   alias gp='git push'
   alias gs='git status'
   alias gst='git status'
-  # Quickly clobber a file and checkout
+  alias gpsh='git stash'
+  alias gpop='git stash pop'
+  alias gbnm='git branch --no-merge'
+  #  Quickly clobber a file and checkout
   function grf() { 
     rm $1
     git checkout $1 
