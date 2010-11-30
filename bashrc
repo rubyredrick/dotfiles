@@ -5,7 +5,10 @@ if [ -f "/etc/bashrc" ] ; then
   source /etc/bashrc
 fi
 
-if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
-
 . ~/bin/dotfiles/bash/env
 . ~/bin/dotfiles/bash/aliases
+
+
+# rvm-install added line:
+if [[ -s /Users/rick/.rvm/scripts/rvm ]] ; then source /Users/rick/.rvm/scripts/rvm ; fi
+
