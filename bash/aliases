@@ -8,6 +8,16 @@ if [ -f ~/.personal_shell_aliases ] ; then
   . ~/.personal_shell_aliases
 fi
 
+function mateLastMigration
+{
+   mate db/migrate/$(ls -tU db/migrate | head -n 1)
+}
+
+function downLastMigration
+{
+   VERSION=$(ls -tU db/migrate | head -n 1 | awk -F_ '{print $1}') rake db:migrate:down
+}
+
 # Quicker cd
 
 # change to current gem directory
@@ -24,12 +34,13 @@ alias cg='cd `gem environment gemdir`'
   alias dbtp='rake db:test:prepare'
   alias sg='./script/generate'
   alias cuk='./script/cucumber'
-  alias cukc='./script/cucumber -pindev'
   alias mig='./script/generate migration'
   alias scaf='./script/generate scaffold'
   alias mod='./script/generate model'
   alias cont='./script/generate controller'
   alias clog='rake log:clear'
+  alias mlmig='mateLastMigration'
+  alias dlmig="downLastMigration"
 
 # Ruby
   alias r='rake'
