@@ -6,5 +6,5 @@
 . ~/bin/dotfiles/zsh/config
 
 # rvm-install added line:
-if [[ -s /Users/rick/.rvm/scripts/rvm ]] ; then source /Users/rick/.rvm/scripts/rvm ; fi
+if [[ -s /Users/rickd/.rvm/scripts/rvm ]] ; then source /Users/rickd/.rvm/scripts/rvm ; fi
 
