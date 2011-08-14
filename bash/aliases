@@ -8,6 +8,11 @@ if [ -f ~/.personal_shell_aliases ] ; then
   . ~/.personal_shell_aliases
 fi
 
+function man2pdf()
+{ 
+   man -t ${1:?Specify man as arg} | open -f -a preview; 
+}
+
 function mateLastMigration
 {
    mate db/migrate/$(ls -tU db/migrate | head -n 1)
