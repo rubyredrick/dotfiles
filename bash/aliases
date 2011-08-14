@@ -104,8 +104,6 @@ alias cg='cd `gem environment gemdir`'
   # database migrate
   alias dbm='rake db:migrate'
 
-  # tests
-  alias rspec='rake spec'
 
   # rails logs, tailing and cleaning
   alias tdl='tail -f ./log/development.log'
