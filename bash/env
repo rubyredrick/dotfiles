@@ -32,13 +32,15 @@ fi
 
 
 
-export PATH="/usr/local/bin;/usr/local/sbin:"$PATH
+export PATH="/usr/local/bin:/usr/local/sbin:"$PATH
 
 # export MANPATH="${MANPATH}:/opt/local/share/man" 
-# export VISUALWORKS="/Users/rick/vw7.6nc"
-# export MAGLEV_HOME=/Users/rick/maglev
+# export VISUALWORKS="/Users/rickd/vw7.6nc"
+# export MAGLEV_HOME=/Users/rickd/maglev
 # export PATH=$MAGLEV_HOME/bin:$PATH
 # export PATH="/usr/local/mysql/bin:$PATH"
 # export PATH="/usr/local/mongodb/bin:$PATH"
+export PATH="$PATH:/usr/local/msp430-toolchain/bin"
 export EDITOR='mate -w'
 export GIT_EDITOR='mate -w'
+export NODE_PATH='/usr/local/lib/node'

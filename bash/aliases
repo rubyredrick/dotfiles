@@ -104,7 +104,6 @@ alias cg='cd `gem environment gemdir`'
   # database migrate
   alias dbm='rake db:migrate'
 
-
   # rails logs, tailing and cleaning
   alias tdl='tail -f ./log/development.log'
   alias ttl='tail -f ./log/test.log'
@@ -117,9 +116,6 @@ alias cg='cd `gem environment gemdir`'
   alias clog='rake log:clear'
   alias mlmig='mateLastMigration'
   alias dlmig="downLastMigration"
-
-# Ruby
-  alias r='rake'
 
 # gem
   alias sgi='sudo gem install'
