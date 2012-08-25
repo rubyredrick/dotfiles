@@ -33,6 +33,8 @@ fi
 
 export EDITOR='mate -w'
 export GIT_EDITOR='mate -w'
+export CC=gcc-4.2
+export CXX=g++-4.2
 
 export PATH="/usr/local/bin:/usr/local/sbin:"$PATH
 
