@@ -30,9 +30,9 @@ if [ -d "$HOME/bin" ] ; then
   append $HOME/bin
 fi
 
-
-export EDITOR='mate -w'
-export GIT_EDITOR='mate -w'
+editor=`ruby ~/bin/dotfiles/support/find_editor_cmd.rb`
+export EDITOR=$editor
+export GIT_EDITOR=$editor
 export CC=gcc-4.2
 export CXX=g++-4.2
 
