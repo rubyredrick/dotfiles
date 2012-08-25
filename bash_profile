@@ -11,5 +11,5 @@
 ##
 
 # rvm-install added line:
-if [[ -s /Users/rickd/.rvm/scripts/rvm ]] ; then source /Users/rickd/.rvm/scripts/rvm ; fi
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
