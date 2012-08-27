@@ -11,5 +11,5 @@ fi
 source ~/bin/dotfiles/git-flow-completion/git-flow-completion.bash
 
 # rvm-install added line:
-if [[ -s ~/.rvm/scripts/rvm ]] ;source ~/.rvm/scripts/rvm ; fi
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
