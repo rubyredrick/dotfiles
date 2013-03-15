@@ -41,3 +41,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:"$PATH
 if [ -f ~/.personal_paths ] ; then 
   . ~/.personal_paths
 fi
+
+if [ -f ~/.personal_env ] ; then 
+  . ~/.personal_env
+fi
